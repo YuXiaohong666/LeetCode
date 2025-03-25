@@ -22,54 +22,27 @@ public class _21 {
 
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode head1 = list1;
-        ListNode head2 = list2;
 
-        ListNode newList = new ListNode();
-        ListNode pointer;
 
-        if (list1.val < list2.val) {
-            newList.val = list1.val;
-            list1 = list1.next;
-            pointer = list1;
-        } else {
-            newList.val = list2.val;
-            list2 = list2.next;
-            pointer = list2;
-        }
+        ListNode newList = new ListNode(-1);
+        ListNode pointer = newList;
 
-        while (true) {
-            if (head1 == null) {
-                pointer.val = head2.val;
-                pointer.next = new ListNode();
-                pointer = pointer.next;
-            } else if (head2 == null) {
-                pointer.val = head1.val;
-                pointer.next = new ListNode();
-                pointer = pointer.next;
-            }
+        while (list1 != null && list2 != null) {
             // 对比一下两边
             // 哪个更大
-            if (head1.val > head2.val) {
-                pointer.val = head2.val;
-                pointer.next = new ListNode();
-                pointer = pointer.next;
-                head2 = head2.next;
+            if (list1.val > list2.val) {
+                pointer.next = list2;
+                list2 = list2.next;
             } else {
-                pointer.val = head1.val;
-                pointer.next = new ListNode();
-                pointer = pointer.next;
-                head1 = head1.next;
+                pointer.next = list1;
+                list1 = list1.next;
             }
-
-
-            if ((head1 == null) && (head2 == null)) {
-                break;
-            }
+            pointer = pointer.next;
         }
-        return newList;
-    }
 
+        pointer.next = list1 == null ? list2 : list1;
+        return newList.next;
+    }
 }
 
 class ListNode {
