@@ -1,21 +1,19 @@
 package easy;
 
-public class _21 {
+public class _21MergeTwoSortedLists {
 
     public static void main(String[] args) {
-        _21 test = new _21();
+        _21MergeTwoSortedLists test = new _21MergeTwoSortedLists();
 
         ListNode list1 = new ListNode(1);
         ListNode list2 = new ListNode(3);
         list1.next = list2;
-        ListNode list3 = new ListNode(5);
-        list2.next = list3;
+        list2.next = new ListNode(5);
 
         ListNode list4 = new ListNode(2);
         ListNode list5 = new ListNode(4);
         list4.next = list5;
-        ListNode list6 = new ListNode(6);
-        list5.next = list6;
+        list5.next = new ListNode(6);
 
         System.out.println(test.mergeTwoLists(list1, list4).toString());
     }

@@ -1,11 +1,9 @@
 package easy;
 
-import java.util.Objects;
-
-public class _14 {
+public class _14LongestCommonPrefix {
 
     public static void main(String[] args) {
-        _14 test = new _14();
+        _14LongestCommonPrefix test = new _14LongestCommonPrefix();
         System.out.println(test.longestCommonPrefix(new String[]{""}));
     }
 

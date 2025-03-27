@@ -2,9 +2,9 @@ package easy;
 
 import java.util.Arrays;
 
-public class _27 {
+public class _27RemoveElement {
     public static void main(String[] args) {
-        _27 test = new _27();
+        _27RemoveElement test = new _27RemoveElement();
         test.removeElement(new int[]{}, 2);
     }
 

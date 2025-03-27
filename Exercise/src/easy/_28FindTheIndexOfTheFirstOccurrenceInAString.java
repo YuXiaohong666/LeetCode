@@ -1,8 +1,8 @@
 package easy;
 
-public class _28 {
+public class _28FindTheIndexOfTheFirstOccurrenceInAString {
     public static void main(String[] args) {
-        _28 test = new _28();
+        _28FindTheIndexOfTheFirstOccurrenceInAString test = new _28FindTheIndexOfTheFirstOccurrenceInAString();
         System.out.println(test.strStr("accsadakam", "sad"));
     }
 
