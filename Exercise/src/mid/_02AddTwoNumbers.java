@@ -1,8 +1,5 @@
 package mid;
 
-import jdk.nashorn.internal.ir.ReturnNode;
-import sun.lwawt.macosx.LWCToolkit;
-
 /**
  * 给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。
  * <p>
@@ -20,26 +17,23 @@ public class _02AddTwoNumbers {
         ListNode pointer = newListNode;
         while (true) {
             pointer.val += (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val);
-            if (l1 != null) {
-                l1 = l1.next;
-            }
-            if (l2 != null) {
-                l2 = l2.next;
-            }
+            if (l1 != null) l1 = l1.next;
+            if (l2 != null) l2 = l2.next;
             if (pointer.val > 9) {
                 pointer.next = new ListNode(1, null);
-//                进位
                 pointer.val -= 10;
+                pointer = pointer.next;
+            } else {
+                if (l1 == null && l2 == null) {
+                    return newListNode;
+                } else {
+                    if (pointer.next == null) {
+                        pointer.next = new ListNode(0, null);
+                        pointer = pointer.next;
+                    }
+                }
             }
-            if (l1 == null && l2 == null) {
-                break;
-            }
-            if (pointer.next == null) {
-                pointer.next = new ListNode(0, null);
-            }
-            pointer = pointer.next;
         }
-        return newListNode;
     }
 }
 
