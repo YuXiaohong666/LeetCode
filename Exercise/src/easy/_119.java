@@ -4,21 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 118. 杨辉三角
+ * 119. 杨辉三角 II
  * 简单
  * <p>
- * 给定一个非负整数 numRows，生成「杨辉三角」的前 numRows 行。
- * <p>
- * 在「杨辉三角」中，每个数是它左上方和右上方的数的和。
+ * 给定一个非负索引 rowIndex，返回「杨辉三角」的第 rowIndex 行。
  */
-public class _118 {
+public class _119 {
     public static void main(String[] args) {
-        System.out.println(_118.generate(5));
+        System.out.println(_119.getRow(3));
     }
 
-    public static List<List<Integer>> generate(int numRows) {
+    public static List<Integer> getRow(int rowIndex) {
+        // if (rowIndex == 0) return new ArrayList<Integer>();
         List<List<Integer>> outerList = new ArrayList<>();
-        for (int i = 0; i < numRows; i++) {
+        for (int i = 0; i <= rowIndex; i++) {
             List<Integer> innerList = new ArrayList<>();
             for (int j = 0; j <= i; j++) {
                 if (j == 0) {
@@ -34,6 +33,6 @@ public class _118 {
             }
             outerList.add(innerList);
         }
-        return outerList;
+        return outerList.get(rowIndex);
     }
 }
