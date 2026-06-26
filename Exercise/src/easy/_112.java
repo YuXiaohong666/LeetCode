@@ -1,7 +1,5 @@
 package easy;
 
-import DataStructure.TreeNode;
-
 /**
  * 112. 路径总和
  * 简单
@@ -29,6 +27,25 @@ public class _112 {
             } else {
                 return search(root.left, targetSum, value) || search(root.right, targetSum, value);
             }
+        }
+    }
+
+    public static class TreeNode {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+
+        public TreeNode() {
+        }
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+
+        public TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
         }
     }
 }

@@ -1,7 +1,5 @@
 package easy;
 
-import DataStructure.TreeNode;
-
 /**
  * 104. 二叉树的最大深度
  * 简单
@@ -21,6 +19,25 @@ public class _104 {
         } else {
             length++;
             return Math.max(search(root.left, length), search(root.right, length));
+        }
+    }
+
+    public static class TreeNode {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+
+        public TreeNode() {
+        }
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+
+        public TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
         }
     }
 }

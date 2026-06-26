@@ -1,7 +1,5 @@
 package easy;
 
-import DataStructure.TreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,5 +17,24 @@ public class _94BinaryTreeInorderTraversal {
         inOrder(list, node.left);
         list.add(node.val);
         inOrder(list, node.right);
+    }
+
+    public static class TreeNode {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+
+        public TreeNode() {
+        }
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+
+        public TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
     }
 }

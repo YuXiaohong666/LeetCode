@@ -1,7 +1,5 @@
 package easy;
 
-import DataStructure.TreeNode;
-
 /**
  *
  * 100. 相同的树
@@ -28,6 +26,25 @@ public class _100 {
             } else {
                 return false;
             }
+        }
+    }
+
+    public static class TreeNode {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+
+        public TreeNode() {
+        }
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+
+        public TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
         }
     }
 }

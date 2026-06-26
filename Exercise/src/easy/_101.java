@@ -1,7 +1,5 @@
 package easy;
 
-import DataStructure.TreeNode;
-
 /**
  * 101. 对称二叉树
  * 简单
@@ -23,6 +21,25 @@ public class _101 {
             return search(root1.left, root2.right) && (search(root1.right, root2.left));
         } else {
             return false;
+        }
+    }
+
+    public static class TreeNode {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+
+        public TreeNode() {
+        }
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
+
+        public TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
         }
     }
 }

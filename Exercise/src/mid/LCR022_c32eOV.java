@@ -5,10 +5,10 @@ import java.util.Set;
 
 public class LCR022_c32eOV {
     public static void main(String[] args) {
-        ListNodeL022 list1 = new ListNodeL022(3);
-        ListNodeL022 list2 = new ListNodeL022(3);
-        ListNodeL022 list3 = new ListNodeL022(3);
-        ListNodeL022 list4 = new ListNodeL022(3);
+        ListNode list1 = new ListNode(3);
+        ListNode list2 = new ListNode(3);
+        ListNode list3 = new ListNode(3);
+        ListNode list4 = new ListNode(3);
         list1.next = list2;
         list2.next = list3;
         list3.next = list4;
@@ -18,9 +18,9 @@ public class LCR022_c32eOV {
         System.out.println(test.detectCycle(list1));
     }
 
-    public ListNodeL022 detectCycle(ListNodeL022 head) {
+    public ListNode detectCycle(ListNode head) {
         if (head == null) return head;
-        Set<ListNodeL022> set = new HashSet<>();
+        Set<ListNode> set = new HashSet<>();
         while (head.next != null) {
             boolean flag = set.add(head);
             if (!flag) {
@@ -30,14 +30,15 @@ public class LCR022_c32eOV {
         }
         return null;
     }
-}
 
-class ListNodeL022 {
-    int val;
-    ListNodeL022 next;
+    public static class ListNode {
+        int val;
+        ListNode next;
 
-    ListNodeL022(int x) {
-        val = x;
-        next = null;
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
     }
 }
+
